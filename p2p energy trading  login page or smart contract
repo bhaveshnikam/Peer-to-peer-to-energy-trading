@@ -1,0 +1,62 @@
+pragma solidity >= 0.5.0 < 0.9.0;
+
+contract g{
+      mapping (uint => Customer) public  customers;
+      mapping (uint=> Owner) public _owner;
+      mapping (uint =>electricien) public _Electricien;
+
+    struct Owner
+    {
+    uint _homenumber;
+    string _name;
+    uint _electricity;
+    }
+    struct Customer
+    {
+        uint _h;
+       string co;
+    }
+    struct electricien
+    {
+        string r;
+        uint charges;
+        uint mobile;
+    }
+
+  Owner c;
+
+  Customer  o;
+
+  electricien  z;
+function owner(uint f,uint homenumber,string memory name,uint electricity) public 
+{
+    c._homenumber=homenumber;
+    c._name=name;
+    c._electricity=electricity;
+    _owner[f]=c;
+}
+
+function customer(uint ad,uint _hn,string memory _co) public
+{
+     o._h=_hn;
+     o.co=_co;
+     customers[ad]=o;
+}
+
+function _electricien(uint d,string memory a,uint _c,uint _m) public {
+   z.r=a;
+   z.charges=_c;
+   z.mobile=_m;
+   _Electricien[d]=z;
+}
+
+
+
+// function checkelectricity(address name) public view returns(uint)
+// {
+//     return address(this).balance;
+// }
+
+// mapping (address => Owner) public cs;
+
+}
